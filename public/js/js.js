@@ -5,6 +5,8 @@ const locationText = document.getElementById('locationText')
 const forecastText = document.getElementById('forecastText')
 weatherform.addEventListener('submit', (e) =>{
     e.preventDefault()
+    locationText.textContent = "Loading..."
+    forecastText.textContent = ""
     const location = search.value
     fetch('/weather?address='+location).then((response) =>{
         response.json().then((data) =>{
